@@ -1,11 +1,25 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryTextColor</item>
+        <item name="colorAccent">@color/secondaryColor</item>
+
+        <item name="android:fontFamily">@font/oxygen_regular</item>
+
+    </style>
+
+    <style name="TabStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:fontFamily">@font/oxygen_bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="FacebookStyle" style="@style/Widget.MaterialComponents.FloatingActionButton">
+        <item name="android:backgroundTint" tools:targetApi="lollipop">@color/primaryTextColor</item>
+        <item name="android:tint">@color/primaryColor</item>
+        <item name="android:src">@drawable/ic_facebook</item>
     </style>
 
 </resources>
