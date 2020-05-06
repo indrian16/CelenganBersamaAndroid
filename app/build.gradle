@@ -24,6 +24,10 @@ android {
     }
 }
 
+repositories {
+    jcenter()
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
@@ -43,6 +47,9 @@ dependencies {
 
     // Logger
     implementation 'com.github.ajalt:timberkt:1.5.1'
+
+    // Ktor
+    implementation 'org.koin:koin-android-viewmodel:2.1.5'
 
     // Unit Testing
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'

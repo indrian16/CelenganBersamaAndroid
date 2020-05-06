@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import io.indrian.celenganbersama.R
-import io.indrian.celenganbersama.ui.adapter.LoginPagerAdapter
+import io.indrian.celenganbersama.adapter.LoginPagerAdapter
 import io.indrian.celenganbersama.ui.dialogs.LoadingDialogFragment
 import kotlinx.android.synthetic.main.activity_login.*
 

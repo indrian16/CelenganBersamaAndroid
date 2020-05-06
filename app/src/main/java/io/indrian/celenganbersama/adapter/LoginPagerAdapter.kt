@@ -1,4 +1,4 @@
-package io.indrian.celenganbersama.ui.adapter
+package io.indrian.celenganbersama.adapter
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity

@@ -78,7 +78,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:hint="@string/first_name"
+        android:hint="@string/last_name"
         app:counterEnabled="true"
         app:counterMaxLength="16"
         app:boxBackgroundColor="@color/primaryTextColor"
