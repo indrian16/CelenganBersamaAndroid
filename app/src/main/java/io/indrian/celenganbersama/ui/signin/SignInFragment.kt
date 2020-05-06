@@ -6,11 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.github.ajalt.timberkt.Timber
 import io.indrian.celenganbersama.R
+import io.indrian.celenganbersama.ui.login.LoginActivity
 import kotlinx.android.synthetic.main.fragment_sign_in.*
 
-class SignInFragment : Fragment() {
+class SignInFragment : Fragment(), View.OnClickListener {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,14 +21,23 @@ class SignInFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setupView()
+
+        initListener()
     }
 
-    private fun setupView() {
+    private fun initListener() {
 
-        til_password.addOnEndIconChangedListener { textInputLayout, previousIcon ->
+        btn_login.setOnClickListener(this)
+    }
 
-            Timber.d { "Click" }
+    override fun onClick(v: View?) {
+
+        when (v?.id) {
+
+            R.id.btn_login -> {
+
+                (activity as LoginActivity).showLoading()
+            }
         }
     }
 }

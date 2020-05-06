@@ -5,9 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.tabs.TabLayoutMediator
 import io.indrian.celenganbersama.R
 import io.indrian.celenganbersama.ui.adapter.LoginPagerAdapter
+import io.indrian.celenganbersama.ui.dialogs.LoadingDialogFragment
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
+
+    companion object {
+
+        private const val TAG_LOADING = "tag_loading"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,5 +37,22 @@ class LoginActivity : AppCompatActivity() {
             view_pager_login.setCurrentItem(tab.position, true)
 
         }.attach()
+    }
+
+    fun showLoading() {
+
+        val fragmentManager = supportFragmentManager
+        val loadingDialogFragment = LoadingDialogFragment()
+        loadingDialogFragment.show(fragmentManager, TAG_LOADING)
+    }
+
+    fun hideLoading() {
+
+        val prev = supportFragmentManager.findFragmentByTag(TAG_LOADING)
+        if (prev != null) {
+
+            val loadingDialogFragment = prev as LoadingDialogFragment
+            loadingDialogFragment.dismiss()
+        }
     }
 }
