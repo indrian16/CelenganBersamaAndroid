@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.MainActivity">
+    tools:context=".ui.main.MainActivity"
+    app:statusBarBackground="@color/primaryColor">
 
     <FrameLayout
         android:id="@+id/user_frame"
@@ -32,7 +33,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="16dp"
                 app:srcCompat="@drawable/ic_home"
-                app:maxImageSize="32dp"
+                app:maxImageSize="30dp"
                 app:tint="@color/primaryColor"
                 app:backgroundTint="@color/primaryTextColor"
                 app:elevation="0dp"
@@ -43,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_activity"
-                app:maxImageSize="32dp"
+                app:maxImageSize="28dp"
                 app:tint="@color/primaryColor"
                 app:backgroundTint="@color/primaryTextColor"
                 app:elevation="0dp"
@@ -55,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 app:srcCompat="@drawable/ic_me"
-                app:maxImageSize="32dp"
+                app:maxImageSize="28dp"
                 app:tint="@color/primaryColor"
                 app:backgroundTint="@color/primaryTextColor"
                 app:elevation="0dp"
@@ -67,7 +68,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ic_report"
-                app:maxImageSize="32dp"
+                app:maxImageSize="28dp"
                 app:tint="@color/primaryColor"
                 app:backgroundTint="@color/primaryTextColor"
                 app:elevation="0dp"

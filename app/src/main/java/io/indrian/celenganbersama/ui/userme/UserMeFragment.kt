@@ -1,4 +1,4 @@
-package io.indrian.celenganbersama.ui.userhome
+package io.indrian.celenganbersama.ui.userme
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,20 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import io.indrian.celenganbersama.R
 
-
-class UserHomeFragment : Fragment() {
+class UserMeFragment : Fragment() {
 
     companion object {
 
-        val TAG = UserHomeFragment::class.java.simpleName
+        val TAG = UserMeFragment::class.java.simpleName
 
-        fun newInstance() = UserHomeFragment()
+        fun newInstance() = UserMeFragment()
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_user_home, container, false)
+        return inflater.inflate(R.layout.fragment_user_me, container, false)
     }
 }

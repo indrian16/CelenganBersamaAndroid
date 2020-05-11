@@ -1,13 +1,17 @@
 package io.indrian.celenganbersama.ui.main
 
 import android.content.res.ColorStateList
-import android.graphics.Color
+import android.os.Build
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Observer
-import com.github.ajalt.timberkt.Timber
 import io.indrian.celenganbersama.R
+import io.indrian.celenganbersama.ui.userhome.UserHomeFragment
+import io.indrian.celenganbersama.ui.userme.UserMeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -23,12 +27,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 homeButtonState(true)
                 meButtonState(false)
+                changeFragment(UserHomeFragment.newInstance(), UserHomeFragment.TAG)
+                changeStatusBarColor(R.color.primaryColor)
             }
 
             is MainMenuState.Me -> {
 
                 homeButtonState(false)
                 meButtonState(true)
+                changeFragment(UserMeFragment.newInstance(), UserMeFragment.TAG)
+                changeStatusBarColor(R.color.primaryTextColor)
             }
         }
     }
@@ -86,6 +94,26 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
             btn_me.setColorFilter(resources.getColor(R.color.primaryColor))
             btn_me.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.primaryTextColor))
+        }
+    }
+
+    private fun changeFragment(fragment: Fragment, tag: String) {
+
+        val transaction = supportFragmentManager.apply {
+
+            popBackStack(null, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+        }.beginTransaction().also {
+
+            it.replace(R.id.user_frame, fragment, tag)
+        }
+
+        transaction.commit()
+    }
+
+    private fun changeStatusBarColor(color: Int) {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            window.statusBarColor = ContextCompat.getColor(this, color);
         }
     }
 }

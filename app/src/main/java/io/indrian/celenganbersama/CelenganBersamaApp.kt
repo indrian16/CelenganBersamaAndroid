@@ -1,7 +1,6 @@
 package io.indrian.celenganbersama
 
 import android.app.Application
-import com.airbnb.lottie.utils.Logger
 import com.github.ajalt.timberkt.Timber
 import io.indrian.celenganbersama.di.appModule
 import org.koin.android.ext.koin.androidContext
