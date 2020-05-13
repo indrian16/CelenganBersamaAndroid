@@ -48,7 +48,7 @@ dependencies {
     // Logger
     implementation 'com.github.ajalt:timberkt:1.5.1'
 
-    // Ktor
+    // Insert Koin
     implementation 'org.koin:koin-android-viewmodel:2.1.5'
 
     // Unit Testing

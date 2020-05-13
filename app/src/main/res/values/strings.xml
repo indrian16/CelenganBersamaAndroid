@@ -31,5 +31,12 @@
     <string name="default_version">1.0.0</string>
     <string name="app_version">App Version</string>
     <string name="logout">Logout</string>
+    <string name="my_saving">My Saving</string>
+    <string name="see_all">See all</string>
+    <string name="saving_0">Saving: 0</string>
+    <string name="income">Income</string>
+    <string name="expense">Expense</string>
+    <string name="create">Create</string>
+    <string name="join">Join</string>
 
 </resources>

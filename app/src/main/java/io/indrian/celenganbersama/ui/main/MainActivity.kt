@@ -1,5 +1,6 @@
 package io.indrian.celenganbersama.ui.main
 
+import android.animation.ObjectAnimator
 import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
@@ -14,6 +15,7 @@ import io.indrian.celenganbersama.ui.userhome.UserHomeFragment
 import io.indrian.celenganbersama.ui.userme.UserMeFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.viewmodel.ext.android.viewModel
+
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -113,7 +115,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     private fun changeStatusBarColor(color: Int) {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            window.statusBarColor = ContextCompat.getColor(this, color);
+            val startColor = window.statusBarColor
+            val endColor = ContextCompat.getColor(this, color)
+            ObjectAnimator.ofArgb(window, "statusBarColor", startColor, endColor).start()
         }
     }
 }

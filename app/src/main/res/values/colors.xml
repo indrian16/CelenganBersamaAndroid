@@ -10,4 +10,5 @@
     <color name="secondaryTextColor">#000000</color>
     <color name="colorFacebook">#4267B2</color>
     <color name="colorGoogle">#eb4132</color>
+    <color name="colorSmoke">#E6E2E6</color>
 </resources>
