@@ -22,7 +22,8 @@
             android:layout_height="100dp"
             android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/primaryTextColor"
-            app:cardElevation="2dp">
+            app:cardElevation="2dp"
+            app:cardCornerRadius="0dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -43,10 +44,10 @@
                     android:id="@+id/tv_balance_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
                     android:layout_marginBottom="16dp"
                     android:text="@string/balance"
                     android:textSize="12sp"
-                    android:layout_marginStart="16dp"
                     app:layout_constraintBottom_toBottomOf="@+id/img_money"
                     app:layout_constraintStart_toEndOf="@+id/img_money"
                     app:layout_constraintTop_toTopOf="@+id/img_money" />
@@ -56,10 +57,10 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="@string/no_money"
-                    android:textSize="16sp"
-                    android:textColor="@color/secondaryTextColor"
                     android:fontFamily="@font/oxygen_bold"
+                    android:text="@string/no_money"
+                    android:textColor="@color/secondaryTextColor"
+                    android:textSize="16sp"
                     app:layout_constraintBottom_toBottomOf="@+id/img_money"
                     app:layout_constraintStart_toStartOf="@+id/tv_balance_title"
                     app:layout_constraintTop_toBottomOf="@+id/tv_balance_title" />
@@ -71,11 +72,12 @@
         <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             app:cardBackgroundColor="@color/primaryTextColor"
             app:cardElevation="2dp"
             android:clickable="true"
-            android:focusable="true">
+            android:focusable="true"
+            app:cardCornerRadius="0dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -134,7 +136,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/app_settings"
-            android:paddingTop="16dp"
+            android:paddingTop="18dp"
             android:paddingStart="16dp"
             android:paddingEnd="16dp"/>
 
@@ -144,6 +146,7 @@
             android:layout_marginTop="2dp"
             app:cardBackgroundColor="@color/primaryTextColor"
             app:cardElevation="2dp"
+            app:cardCornerRadius="0dp"
             android:clickable="true"
             android:focusable="true">
 
@@ -155,11 +158,11 @@
                 <ImageView
                     android:layout_width="24dp"
                     android:layout_height="24dp"
+                    android:contentDescription="@string/see_more_menu_option"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_option"
-                    android:contentDescription="@string/see_more_menu_option" />
+                    app:srcCompat="@drawable/ic_option" />
 
                 <TextView
                     android:id="@+id/tv_setting_title"
@@ -180,7 +183,8 @@
             android:layout_height="70dp"
             android:layout_marginTop="2dp"
             app:cardBackgroundColor="@color/primaryTextColor"
-            app:cardElevation="2dp">
+            app:cardElevation="2dp"
+            app:cardCornerRadius="0dp">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -225,6 +229,7 @@
             android:layout_marginBottom="54dp"
             app:cardBackgroundColor="@color/primaryTextColor"
             app:cardElevation="2dp"
+            app:cardCornerRadius="0dp"
             android:clickable="true"
             android:focusable="true">
 
