@@ -16,66 +16,15 @@
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/user_bottom_app_bar"
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_gravity="bottom">
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetRight="0dp"
+        app:contentInsetEnd="0dp">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:gravity="center_vertical">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_home"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="16dp"
-                app:srcCompat="@drawable/ic_home"
-                app:maxImageSize="30dp"
-                app:tint="@color/primaryColor"
-                app:backgroundTint="@color/primaryTextColor"
-                app:elevation="0dp"
-                android:layout_alignParentStart="true"/>
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_activities"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_activity"
-                app:maxImageSize="28dp"
-                app:tint="@color/primaryColor"
-                app:backgroundTint="@color/primaryTextColor"
-                app:elevation="0dp"
-                android:layout_toEndOf="@id/btn_home"/>
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_me"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                app:srcCompat="@drawable/ic_me"
-                app:maxImageSize="28dp"
-                app:tint="@color/primaryColor"
-                app:backgroundTint="@color/primaryTextColor"
-                app:elevation="0dp"
-                android:layout_alignParentEnd="true"
-                tools:ignore="RelativeOverlap" />
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btn_report"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/ic_report"
-                app:maxImageSize="28dp"
-                app:tint="@color/primaryColor"
-                app:backgroundTint="@color/primaryTextColor"
-                app:elevation="0dp"
-                android:layout_toStartOf="@id/btn_me"
-                tools:ignore="RelativeOverlap" />
-
-        </RelativeLayout>
+        <include
+            layout="@layout/main_menu_content"/>
 
     </com.google.android.material.bottomappbar.BottomAppBar>
 

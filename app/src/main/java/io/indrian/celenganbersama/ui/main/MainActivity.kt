@@ -1,7 +1,6 @@
 package io.indrian.celenganbersama.ui.main
 
 import android.animation.ObjectAnimator
-import android.content.res.ColorStateList
 import android.os.Build
 import android.os.Bundle
 import android.view.View
@@ -13,7 +12,7 @@ import androidx.lifecycle.Observer
 import io.indrian.celenganbersama.R
 import io.indrian.celenganbersama.ui.userhome.UserHomeFragment
 import io.indrian.celenganbersama.ui.userme.UserMeFragment
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.main_menu_content.*
 import org.koin.android.viewmodel.ext.android.viewModel
 
 
@@ -30,7 +29,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 homeButtonState(true)
                 meButtonState(false)
                 changeFragment(UserHomeFragment.newInstance(), UserHomeFragment.TAG)
-                changeStatusBarColor(R.color.primaryColor)
             }
 
             is MainMenuState.Me -> {
@@ -38,7 +36,6 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 homeButtonState(false)
                 meButtonState(true)
                 changeFragment(UserMeFragment.newInstance(), UserMeFragment.TAG)
-                changeStatusBarColor(R.color.primaryTextColor)
             }
         }
     }
@@ -47,6 +44,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        setupBackgroundColor()
         viewModel.mainMenuState.observe(this, menuStateObserver)
         initListener()
     }
@@ -75,13 +73,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         if (filled) {
 
-            btn_home.setColorFilter(resources.getColor(R.color.primaryTextColor))
-            btn_home.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.primaryColor))
+            btn_home.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primaryLightColor)
+            btn_home.iconTint = ContextCompat.getColorStateList(this, R.color.primaryTextColor)
 
         } else {
 
-            btn_home.setColorFilter(resources.getColor(R.color.primaryColor))
-            btn_home.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.primaryTextColor))
+            btn_home.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primaryTextColor)
+            btn_home.iconTint = ContextCompat.getColorStateList(this, R.color.primaryColor)
         }
     }
 
@@ -89,13 +87,13 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
         if (filled) {
 
-            btn_me.setColorFilter(resources.getColor(R.color.primaryTextColor))
-            btn_me.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.primaryColor))
+            btn_me.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primaryLightColor)
+            btn_me.iconTint = ContextCompat.getColorStateList(this, R.color.primaryTextColor)
 
         } else {
 
-            btn_me.setColorFilter(resources.getColor(R.color.primaryColor))
-            btn_me.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.primaryTextColor))
+            btn_me.backgroundTintList = ContextCompat.getColorStateList(this, R.color.primaryTextColor)
+            btn_me.iconTint = ContextCompat.getColorStateList(this, R.color.primaryColor)
         }
     }
 
@@ -112,11 +110,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         transaction.commit()
     }
 
-    private fun changeStatusBarColor(color: Int) {
+    private fun setupBackgroundColor() {
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val startColor = window.statusBarColor
-            val endColor = ContextCompat.getColor(this, color)
+            val endColor = ContextCompat.getColor(this, R.color.primaryColor)
             ObjectAnimator.ofArgb(window, "statusBarColor", startColor, endColor).start()
         }
     }

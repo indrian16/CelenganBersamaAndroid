@@ -76,46 +76,44 @@
         android:id="@+id/tv_title_social_media"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:text="@string/connect_to_your_social_media"
-        android:textColor="@color/secondaryTextColor"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tv_forgot_password"
         app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login_facebook"
+        style="@style/Widget.App.Button.TextButton.IconOnly"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:backgroundTint="@color/primaryTextColor"
-        app:borderWidth="0dp"
-        app:fabCustomSize="54dp"
+        app:cornerRadius="8dp"
+        android:layout_marginEnd="2dp"
+        app:icon="@drawable/ic_facebook"
+        app:iconSize="32dp"
+        app:iconTint="@color/colorFacebook"
         app:layout_constraintEnd_toStartOf="@+id/btn_login_google"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_social_media"
-        android:layout_marginStart="78dp"
-        app:maxImageSize="54dp"
-        app:srcCompat="@drawable/ic_facebook"
-        app:tint="@color/colorFacebook"
-        tools:targetApi="lollipop" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_social_media" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_login_google"
+        style="@style/Widget.App.Button.TextButton.IconOnly"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:backgroundTint="@color/primaryTextColor"
-        app:borderWidth="0dp"
-        app:fabCustomSize="54dp"
-        android:layout_marginEnd="78dp"
+        android:layout_marginStart="2dp"
+        app:icon="@drawable/ic_google"
+        app:iconSize="32dp"
+        app:iconTint="@color/colorGoogle"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_login_facebook"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toEndOf="@+id/btn_login_facebook"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_social_media"
-        app:maxImageSize="32dp"
-        app:srcCompat="@drawable/ic_google"
-        app:tint="@color/colorGoogle"
-        tools:targetApi="lollipop" />
+        app:layout_constraintTop_toTopOf="@+id/btn_login_facebook"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
